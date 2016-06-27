@@ -9,6 +9,15 @@ window.onload = function() {
 	}
 }
 
-function play (){
+// var x = [];
+// var o = [];
 
-}
+// var winners = 
+
+//display an X or O inside the board
+// function playMe (){
+// 	if(this.)
+// }
+
+//make sure nothing happens if already clicked
+//reset the game--connect this to reset button. 
