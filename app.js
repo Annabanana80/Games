@@ -5,19 +5,19 @@ window.onload = function() {
 	}
 
 function start () {
-	document.begin  = 'X';	//the first player always starts with X
+	document.begin  = 'X';	//the first player always starts with X. Incorporated the document.begin back into my code. Borrowed from HW.
 	var squares = document.getElementsByClassName('square');	//grabbing the squares
 		for(var i=0; i<squares.length; i++){					
 			squares[i].addEventListener('click', function(){	//making all of the squares clickable
 				//this.innerHTML = '';
-				playMe(this);	//calling the playMe function to make the X's and O's display
+				playMe(this);	//calling the playMe function and starts the game as the turn and playMe function are intertwined. 
 											
 		});
 	}
 }
 start();
 
-function playMe(square) {
+function playMe(square) { ////This is borrowed from my howework from week 2 day 5. It prevents a square from being clicked twice!
 	if (square.innerText == ""){
 		square.innerText = document.begin;
 		turn();
@@ -26,13 +26,27 @@ function playMe(square) {
 	}
 }
 
-function turn () {
+function turn () {                    //this is also borrowed from my homework. This ensures that X and O alternate.
 	if (document.begin === "X"){
 		document.begin = "O";
 	}else{
 		document.begin = "X";
 	}
 }
+
+//var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+
+//display an X or O inside the board
+
+//start of winner logic--A work in progress. :)
+  	// function checkForWinners () {
+  	// 	for(var i=0; i<winners.length; i++){
+  	//		if()
+  	// 	}
+  	// }
+
+
 
 // var clearMe=document.getElementById('button');
 // 	clearMe.addEventListener('click', function(){
@@ -51,17 +65,6 @@ function turn () {
 // 	}
 // }
 
-//var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-
-
-//display an X or O inside the board
-
-//start of winner logic--A work in progress. :)
-  	// function checkForWinners () {
-  	// 	for(var i=0; i<winners.length; i++){
-  	//		if()
-  	// 	}
-  	// }
 
 
 
