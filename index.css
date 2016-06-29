@@ -9,6 +9,8 @@ table {
 	text-align: center;
 	background-repeat: no-repeat;
 	background-size: auto;
+	display: inline-block;
+	font size: 50px;
 }
 h1 {
 	text-align: center;
@@ -20,4 +22,15 @@ button{
 }
 .square:hover{
 	background: url("http://i.imgur.com/lyzbm9Rs.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
 }
+/*.squareclicked {
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	display: inline-block;
+}*/
