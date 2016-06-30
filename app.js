@@ -11,7 +11,7 @@ function start () {
 			squares[i].addEventListener('click', function(){	//making all of the squares clickable
 				//this.innerHTML = '';
 				playMe(this);	//calling the playMe function and starts the game as the turn and playMe function are intertwined. 
-											
+				position(); //this checks the position and hopefully envokes everything.							
 		});
 	}
 }
@@ -23,10 +23,11 @@ function playMe(square) { ////This is borrowed from my howework from week 2 day 
 		turn();
 	}else{
 		alert("That square is taken :)")
+		
 	}
 }
 //display an X or O inside the board
-function turn () {                    //this is also borrowed from my homework. 										
+function turn () {                    //this is also borrowed from my homework from week 2 day 5. 										
 	if (document.begin === "X"){		//This ensures that X and O alternate.
 		document.begin = "O";
 	}else{
@@ -41,45 +42,47 @@ function names (text) {  //this function grabs the names and appends them to the
 	var second = prompt("Player 2, what is your name?");
 	playerTwo.innerHTML=second;
 }
-//var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-//var playerX=[];
-//var playerO=[];
-
-//What do I want this to do?
-	//iterate over the winners array
-	//iterate over the winners
-	//link the winning combinations with X or O
-	//have each square display "X wins" or "O wins" depending on who won. 
 
 
+function checkForWinners (number){
+ var allSquares = document.getElementsByClassName('square');
+ for(var i=0; i<allSquares.length; i++){
+ 	if ( ((allSquares[0].innerHTML === allSquares[1].innerHTML) && (allSquares[0].innerHTML === allSquares[2].innerHTML)) ||    //winning combinations  
+ 		((allSquares[3].innerHTML === allSquares[4].innerHTML) && (allSquares[3].innerHTML===allSquares[5].innerHTML))||
+ 		((allSquares[6].innerHTML === allSquares[7].innerHTML) && (allSquares[6].innerHTML===allSquares[8].innerHTML))||
+ 		((allSquares[0].innerHTML === allSquares[3].innerHTML) && (allSquares[0].innerHTML===allSquares[6].innerHTML))||
+ 		((allSquares[1].innerHTML === allSquares[4].innerHTML) && (allSquares[1].innerHTML===allSquares[7].innerHTML))||
+ 		((allSquares[2].innerHTML === allSquares[5].innerHTML) && (allSquares[2].innerHTML===allSquares[8].innerHTML))||
+ 		((allSquares[0].innerHTML === allSquares[4].innerHTML) && (allSquares[0].innerHTML===allSquares[8].innerHTML))||
+ 		((allSquares[2].innerHTML === allSquares[4].innerHTML) && (allSquares[2].innerHTML===allSquares[6].innerHTML))
+ 	){
+ 		return true; 
+ }else{
+ 	return false;
+ }
+}
 
-//start of winner logic--A work in progress. :)
+function position (){
+  	var square=document.getElementsByClassName('square');    //Borrowed from what I remember from reading the solution. This might be similar and I wanted to cite it just in case.
+  	 			//call the checkForWinners function,
+  	 if(checkForWinners(square.innerHTML==="X")) {
+  		 for(var i=0; i<square.length; i++){
+  			square[i].innerHTML="X wins!"
+  			}
+  		}else if(checkForWinners(square.innerHTML==="O")){
+  		for(var j=0; j<square.length;j++){
+  			square[j].innerHTML="O wins!"
+  		}
+  	}
+}
+}
   	
-  	// function checkForWinners () {
-  	// 	for(var i=0; i<winners.length; i++){ //iterates over winner array
-  	//		for (var j=0; j<winners[i]; j++) {  //iterates over arrays within the array
-  	// 	       if (winners[i]===[j]){
-  	//				return true;
-  	//			}else{
-  	//				return false;
-  	//			}
-  	//		}
-  	// }
-
-  	//function position (){
-  	// var square=document.getElementsByClassName('square');
-  	// checkForWinners();
-  	// if(square.innerHTML==="X") {
-  	// call the checkForWinners function, 
-  	// I think another loop needs to be written to iterate over the squares
-  	// call the squares and make them display in all squares "X wins!" OR create an alert	
-  	//	}else if(square.innerHTML==="O")
-  	//}
-  	
-
-//Plan B: Make a big ass if statement with the winning combos:
 
 
+
+//Spooky Code and random thoughts Graveyard
+
+//reset button
 
 // var clearMe=document.getElementById('button');
 // 	clearMe.addEventListener('click', function(){
@@ -99,16 +102,32 @@ function names (text) {  //this function grabs the names and appends them to the
 // }
 
 
+//var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+// var playerX=[];
+// var playerO=[];
+
+//What do I want this to do?
+	//iterate over the winners array
+	//iterate over the winners
+	//link the winning combinations with X or O
+	//have each square display "X wins" or "O wins" depending on who won. 
 
 
 
-
-
-
-
-
-//Spooky Code Graveyard
-
+//start of winner logic--A work in progress. :)
+  	
+// function checkForWinners () {
+//   for(var i=0; i<winners.length; i++){ //iterates over winner array
+//   	for (var j=0; j<winners[i]; j++) {  //iterates over arrays within the array
+//   	if (winners[i]===[j]){
+//   				return true;
+//   			}else{
+//  				return false;
+//  		}
+//   	}
+// }
+//Plan B: Make a big if statement with the winning combos:
 // var currentPlayer = '';
 
 // function start () {
