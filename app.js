@@ -241,7 +241,7 @@ function lightUp (){ //This is MY creation! I am very proud of it.
  	 // }
 
 
- // function turn (){				//this switches turns. Used from previous homework.
+ // function turn (){				//this switches turns. Used from what I remember from previous homework.
 	//  if (document.start === "X"){
 	//  	document.start ="O";
  // 	}else{
