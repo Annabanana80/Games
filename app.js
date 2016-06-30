@@ -11,7 +11,7 @@ function start () {
 			squares[i].addEventListener('click', function(){	//making all of the squares clickable
 				//this.innerHTML = '';
 				playMe(this);	//calling the playMe function and starts the game as the turn and playMe function are intertwined. 
-				position(); //this checks the position and hopefully envokes everything.							
+											
 		});
 	}
 }
@@ -21,6 +21,7 @@ function playMe(square) { ////This is borrowed from my howework from week 2 day 
 	if (square.innerText == ""){
 		square.innerText = document.begin;
 		turn();
+		position(); //this checks the position and hopefully envokes everything.
 	}else{
 		alert("That square is taken :)")
 		
@@ -43,24 +44,49 @@ function names (text) {  //this function grabs the names and appends them to the
 	playerTwo.innerHTML=second;
 }
 
+//var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
-function checkForWinners (number){
- var allSquares = document.getElementsByClassName('square');
- for(var i=0; i<allSquares.length; i++){
- 	if ( ((allSquares[0].innerHTML === allSquares[1].innerHTML) && (allSquares[0].innerHTML === allSquares[2].innerHTML)) ||    //winning combinations  
- 		((allSquares[3].innerHTML === allSquares[4].innerHTML) && (allSquares[3].innerHTML===allSquares[5].innerHTML))||
- 		((allSquares[6].innerHTML === allSquares[7].innerHTML) && (allSquares[6].innerHTML===allSquares[8].innerHTML))||
- 		((allSquares[0].innerHTML === allSquares[3].innerHTML) && (allSquares[0].innerHTML===allSquares[6].innerHTML))||
- 		((allSquares[1].innerHTML === allSquares[4].innerHTML) && (allSquares[1].innerHTML===allSquares[7].innerHTML))||
- 		((allSquares[2].innerHTML === allSquares[5].innerHTML) && (allSquares[2].innerHTML===allSquares[8].innerHTML))||
- 		((allSquares[0].innerHTML === allSquares[4].innerHTML) && (allSquares[0].innerHTML===allSquares[8].innerHTML))||
- 		((allSquares[2].innerHTML === allSquares[4].innerHTML) && (allSquares[2].innerHTML===allSquares[6].innerHTML))
- 	){
- 		return true; 
- }else{
- 	return false;
- }
-}
+// var playerX=[];
+// var playerO=[];
+
+//What do I want this to do?
+	//iterate over the winners array
+	//iterate over the winners
+	//link the winning combinations with X or O
+	//have each square display "X wins" or "O wins" depending on who won. 
+
+
+
+//start of winner logic--A work in progress. :)
+  	
+// function checkForWinners () {
+//   for(var i=0; i<winners.length; i++){ //iterates over winner array
+//   	for (var j=0; j<winners[i]; j++) {  //iterates over arrays within the array
+//   	if (winners[i]===[j]){
+//   				return true;
+//   			}else{
+//  				return false;
+//  		}
+//   	}
+// }
+
+//  function checkForWinners (number){
+//   var allSquares = document.getElementsByClassName('square');
+//   for(var i=0; i<allSquares.length; i++){
+//   	if ( ((allSquares[0].innerHTML === allSquares[1].innerHTML) && (allSquares[0].innerHTML === allSquares[2].innerHTML)) ||    //winning combinations  
+//   		((allSquares[3].innerHTML === allSquares[4].innerHTML) && (allSquares[3].innerHTML===allSquares[5].innerHTML))||
+//   		((allSquares[6].innerHTML === allSquares[7].innerHTML) && (allSquares[6].innerHTML===allSquares[8].innerHTML))||
+//   		((allSquares[0].innerHTML === allSquares[3].innerHTML) && (allSquares[0].innerHTML===allSquares[6].innerHTML))||
+//   		((allSquares[1].innerHTML === allSquares[4].innerHTML) && (allSquares[1].innerHTML===allSquares[7].innerHTML))||
+//   		((allSquares[2].innerHTML === allSquares[5].innerHTML) && (allSquares[2].innerHTML===allSquares[8].innerHTML))||
+//   		((allSquares[0].innerHTML === allSquares[4].innerHTML) && (allSquares[0].innerHTML===allSquares[8].innerHTML))||
+//   		((allSquares[2].innerHTML === allSquares[4].innerHTML) && (allSquares[2].innerHTML===allSquares[6].innerHTML))
+//  	){
+//   		return true; 
+//   }else{
+//   	return false;
+//   }
+// }
 
 function position (){
   	var square=document.getElementsByClassName('square');    //Borrowed from what I remember from reading the solution. This might be similar and I wanted to cite it just in case.
