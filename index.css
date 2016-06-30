@@ -1,5 +1,5 @@
 body{
-	background-image: url("http://i.imgur.com/hxOD6Hlh.jpg");
+	background-image: url("https://i.imgur.com/hxOD6Hlh.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	font-family: 'Candal', sans-serif;
@@ -29,7 +29,7 @@ button{
 	display: block;
 }
 .square:hover{
-	background: url("http://i.imgur.com/lyzbm9Rs.jpg");
+	background: url("https://i.imgur.com/lyzbm9Rs.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 }
