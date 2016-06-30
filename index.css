@@ -1,0 +1,51 @@
+body{
+	background-image: url("http://i.imgur.com/hxOD6Hlh.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: 'Candal', sans-serif;
+}
+
+table {
+	border: 1px solid black;
+	margin: 0 auto;
+}
+.square {
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	text-align: center;
+	/*background-repeat: no-repeat;
+	background-size: auto;
+	display: inline-block;*/
+	font-size: 75px;
+}
+h1 {
+	text-align: center;
+	font-size: 75px;
+}
+button{
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+}
+.square:hover{
+	background: url("http://i.imgur.com/lyzbm9Rs.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+div, h4{
+	text-align: center;
+
+}
+div {
+	font-size: 50px;
+}
+/*.squareclicked {
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	display: inline-block;
+}*/
