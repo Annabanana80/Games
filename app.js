@@ -1,7 +1,7 @@
 window.onload = function() {
 	console.log('app.js');
 
-	
+	names();  //this envokes the function that grabs the names and appends them to the page upon the page loading.
 	}
 
 function start () {
@@ -25,26 +25,59 @@ function playMe(square) { ////This is borrowed from my howework from week 2 day 
 		alert("That square is taken :)")
 	}
 }
-
-function turn () {                    //this is also borrowed from my homework. This ensures that X and O alternate.
-	if (document.begin === "X"){
+//display an X or O inside the board
+function turn () {                    //this is also borrowed from my homework. 										
+	if (document.begin === "X"){		//This ensures that X and O alternate.
 		document.begin = "O";
 	}else{
 		document.begin = "X";
 	}
 }
-
+function names (text) {  //this function grabs the names and appends them to the page. 
+	var playerOne=document.getElementById('playerOne');
+	var first= prompt("Player 1, what is your name?");
+	playerOne.innerHTML=first; 							//this appends the input from the prompt to the page.
+	var playerTwo=document.getElementById('playerTwo');
+	var second = prompt("Player 2, what is your name?");
+	playerTwo.innerHTML=second;
+}
 //var winners = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+//var playerX=[];
+//var playerO=[];
+
+//What do I want this to do?
+	//iterate over the winners array
+	//iterate over the winners
+	//link the winning combinations with X or O
+	//have each square display "X wins" or "O wins" depending on who won. 
 
 
-//display an X or O inside the board
 
 //start of winner logic--A work in progress. :)
+  	
   	// function checkForWinners () {
-  	// 	for(var i=0; i<winners.length; i++){
-  	//		if()
-  	// 	}
+  	// 	for(var i=0; i<winners.length; i++){ //iterates over winner array
+  	//		for (var j=0; j<winners[i]; j++) {  //iterates over arrays within the array
+  	// 	       if (winners[i]===[j]){
+  	//				return true;
+  	//			}else{
+  	//				return false;
+  	//			}
+  	//		}
   	// }
+
+  	//function position (){
+  	// var square=document.getElementsByClassName('square');
+  	// checkForWinners();
+  	// if(square.innerHTML==="X") {
+  	// call the checkForWinners function, 
+  	// I think another loop needs to be written to iterate over the squares
+  	// call the squares and make them display in all squares "X wins!" OR create an alert	
+  	//	}else if(square.innerHTML==="O")
+  	//}
+  	
+
+//Plan B: Make a big ass if statement with the winning combos:
 
 
 
