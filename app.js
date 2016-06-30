@@ -11,28 +11,51 @@ function start () {
 			squares[i].addEventListener('click', function(){	//making all of the squares clickable
 				//this.innerHTML = '';
 				playMe(this);	//calling the playMe function and starts the game as the turn and playMe function are intertwined. 
+<<<<<<< HEAD
 				position(); //this checks the position and hopefully envokes everything.							
+=======
+											
+>>>>>>> master
 		});
 	}
 }
 start();
 
+<<<<<<< HEAD
 function playMe(square) { ////This is borrowed from my howework from week 2 day 5. It prevents a square from being clicked twice!
 	if (square.innerText == ""){
 		square.innerText = document.begin;
 		turn();
+=======
+function playMe(square) { ////This is borrowed from what I rememeber doing for my howework from week 2 day 5. It prevents a square from being clicked twice!
+	if (square.innerText == ""){
+		square.innerText = document.begin;
+		turn();
+		lightUp();
+>>>>>>> master
 	}else{
 		alert("That square is taken :)")
 		
 	}
 }
 //display an X or O inside the board
+<<<<<<< HEAD
 function turn () {                    //this is also borrowed from my homework from week 2 day 5. 										
 	if (document.begin === "X"){		//This ensures that X and O alternate.
+=======
+function turn () { //this is also borrowed from what I remember doing my homework from week 2 day 5.
+	if (checkForWinner(document.begin)){
+	alert("Congratulations " + document.begin + " you won!"); //this checks for the winner then annouces the winner. Link for source is cited below.
+	}else if (document.begin === "X"){	      	//This ensures that X and O alternate.
+>>>>>>> master
 		document.begin = "O";
 	}else{
 		document.begin = "X";
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> master
 }
 function names (text) {  //this function grabs the names and appends them to the page. 
 	var playerOne=document.getElementById('playerOne');
@@ -43,6 +66,7 @@ function names (text) {  //this function grabs the names and appends them to the
 	playerTwo.innerHTML=second;
 }
 
+<<<<<<< HEAD
 
 function checkForWinners (number){
  var allSquares = document.getElementsByClassName('square');
@@ -78,10 +102,102 @@ function position (){
 }
   	
 
+=======
+function lightUp (){ //This is MY creation! I am very proud of it.
+	
+	//var illuminate = document.querySelector('div');
+	if(document.begin ==="O"){				//This will turn playerOne's or X's name chartreuse
+		var playerOne = document.getElementById('playerOne');
+		playerOne.style.color = 'chartreuse';
+		var playerTwo = document.getElementById('playerTwo'); //While player two is black still
+		playerTwo.style.color = 'black';
+	}else if(document.begin ==="X"){
+		var playerTwo = document.getElementById('playerTwo'); //Switch! :)
+		playerTwo.style.color = "chartreuse";
+		var playerOne = document.getElementById('playerOne');
+		playerOne.style.color = 'black'
+	}
+}
+//Why this solution? It is written simply, and in an easy to understand format. In addition, I was able to get this solution
+//to work best with the code I already had. In the Spooky Code graveyard, you will see my attempts.
+ function checkForWinner(move){  //Source for this code: https://www.youtube.com/watch?v=T6zFEiXaH-Q
+ 	var result = false;  //no win unless these combinations are met.
+	if(positions(1,2,3, move)||  //these are the winning combinations derived from the get Square function which is in turn passed into the positions function.
+	  positions(4,5,6, move)||
+ 	  positions(7,8,9, move)||
+ 	  positions(1,4,7, move)||
+	  positions(2,5,8, move)||
+ 	  positions(3,6,9, move)||
+	  positions(1,5,9, move)||
+	  positions(3,5,7, move)) {
+
+ 		result = true;
+ 	}
+ 	return result;
+ }
+
+
+ function positions(a, b, c, move){   //Source for this code: https://www.youtube.com/watch?v=T6zFEiXaH-Q
+ 	var win = false;
+	if (getSquare(a)===move && getSquare(b)===move && getSquare(c) ===move){ //this sets the position to determine the win
+ 		win = true;
+ 	}
+	return win;
+ }
+
+ function getSquare(number){   //Source for this code: https://www.youtube.com/watch?v=T6zFEiXaH-Q
+	return document.getElementById("square" + number).innerHTML; //this grabs each square and gives them a number.
+}
+>>>>>>> master
 
 
 //Spooky Code and random thoughts Graveyard
 
+<<<<<<< HEAD
+=======
+// function checkForWinners (){
+ //   	var square=document.getElementsByClassName('square');    //Borrowed from what I remember from reading the solution. This might be similar and I wanted to cite it just in case. 			
+ // 	 if(winPosition(square.innerHTML==="X")) {
+ //   		 for(var i=0; i<square.length; i++){
+ //   			square[i].innerHTML="X wins!"
+ //  			}
+ //  		}else if(winPosition(square.innerHTML==="O")){
+ //   		for(var j=0; j<square.length;j++){
+ //  			square[j].innerHTML="O wins!"
+ //  			}
+ //  		}
+ //    }
+
+// function winPosition (){
+//   	var win = false;
+// 	var allSquares = document.getElementsByClassName('square');
+//   for(var i=0; i<allSquares.length; i++){
+//    	if ( ((allSquares[0].innerHTML === allSquares[1].innerHTML) && (allSquares[0].innerHTML === allSquares[2].innerHTML)) ||    //winning combinations  
+//    		((allSquares[3].innerHTML === allSquares[4].innerHTML) && (allSquares[3].innerHTML===allSquares[5].innerHTML))||
+//    		((allSquares[6].innerHTML === allSquares[7].innerHTML) && (allSquares[6].innerHTML===allSquares[8].innerHTML))||
+//    		((allSquares[0].innerHTML === allSquares[3].innerHTML) && (allSquares[0].innerHTML===allSquares[6].innerHTML))||
+//    		((allSquares[1].innerHTML === allSquares[4].innerHTML) && (allSquares[1].innerHTML===allSquares[7].innerHTML))||
+//    		((allSquares[2].innerHTML === allSquares[5].innerHTML) && (allSquares[2].innerHTML===allSquares[8].innerHTML))||
+//    		((allSquares[0].innerHTML === allSquares[4].innerHTML) && (allSquares[0].innerHTML===allSquares[8].innerHTML))||
+//    		((allSquares[2].innerHTML === allSquares[4].innerHTML) && (allSquares[2].innerHTML===allSquares[6].innerHTML))
+//   	){
+//    		win = true;
+//    }
+// }	return win;
+// }
+// function checkForWinners () {
+//   for(var i=0; i<winners.length; i++){ //iterates over winner array
+//   	for (var j=0; j<winners[i]; j++) {  //iterates over arrays within the array
+//   	if (winners[i]===[j]){
+//   				return true;
+//   			}else{
+//  				return false;
+//  		}
+//   	}
+// }  	
+
+		//position(); //this checks the position and hopefully envokes everything.
+>>>>>>> master
 //reset button
 
 // var clearMe=document.getElementById('button');
