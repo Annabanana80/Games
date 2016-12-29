@@ -27,6 +27,8 @@ button{
 	margin: 0 auto;
 	text-align: center;
 	display: block;
+	margin-bottom: 50px;
+	font-family: 'Candal', sans-serif;
 }
 .square:hover{
 	background: url("http://i.imgur.com/fdFWXVPs.jpg");
