@@ -92,6 +92,15 @@ function lightUp (){ //This is MY creation! I am very proud of it.
  function getSquare(number){   //Source for this code: https://www.youtube.com/watch?v=T6zFEiXaH-Q
 	return document.getElementById("square" + number).innerHTML; //this grabs each square and gives them a number.
 }
+//resets the board
+	var button=document.getElementById('button');
+	var squares=document.getElementsByClassName('square');
+	button.addEventListener('click', function(){
+		for(var i=0;i<squares.length;i++){
+			squares[i].innerHTML='';
+
+		}
+	});
 
 
 //Spooky Code and random thoughts Graveyard
